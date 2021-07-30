@@ -5,16 +5,172 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/base_margin"
+    android:layout_marginEnd="@dimen/base_margin"
     tools:context=".ui.main.MainFragment">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/search_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MainFragment"
+        android:text="@string/search_by_zip_code"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/zip_input_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        app:placeholderText="@string/zip_code"
+        app:expandedHintEnabled="true"
+
+        app:layout_constraintTop_toBottomOf="@id/search_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_search">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/zip_code"
+            android:text="94043"
+            tools:text="94043"
+            android:background="@color/white"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/searh_button"
+        app:layout_constraintStart_toEndOf="@id/zip_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/zip_input_layout" />
+
+    <TextView
+        android:id="@+id/descr_location"
+        android:text="@string/location"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/Theme.WeatherAppAndroid.TextViewDescr"
+        app:layout_constraintTop_toBottomOf="@id/zip_input_layout" />
+
+    <TextView
+        android:id="@+id/text_location"
+        style="@style/Theme.WeatherAppAndroid.TextViewData"
+        tools:text="Mountain View"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/descr_location" />
+
+    <TextView
+        android:id="@+id/descr_temperature"
+        android:text="@string/temperature"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/Theme.WeatherAppAndroid.TextViewDescr"
+        app:layout_constraintTop_toBottomOf="@id/text_location" />
+
+    <TextView
+        android:id="@+id/text_temperature"
+        style="@style/Theme.WeatherAppAndroid.TextViewData"
+        tools:text="55.58F"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/descr_temperature" />
+
+    <TextView
+        android:id="@+id/descr_wind_speed"
+        android:text="@string/wind_speed"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/Theme.WeatherAppAndroid.TextViewDescr"
+        app:layout_constraintTop_toBottomOf="@id/text_temperature" />
+
+    <TextView
+        android:id="@+id/text_wind_speed"
+        style="@style/Theme.WeatherAppAndroid.TextViewData"
+        tools:text="10.29 mph"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/descr_wind_speed" />
+
+    <TextView
+        android:id="@+id/descr_humidity"
+        android:text="@string/humidity"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/Theme.WeatherAppAndroid.TextViewDescr"
+        app:layout_constraintTop_toBottomOf="@id/text_wind_speed" />
+
+    <TextView
+        android:id="@+id/text_humidity"
+        style="@style/Theme.WeatherAppAndroid.TextViewData"
+        tools:text="54%"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/descr_humidity" />
+
+    <TextView
+        android:id="@+id/descr_visibility"
+        android:text="@string/visibility"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/Theme.WeatherAppAndroid.TextViewDescr"
+        app:layout_constraintTop_toBottomOf="@id/text_humidity" />
+
+    <TextView
+        android:id="@+id/text_visibilityy"
+        style="@style/Theme.WeatherAppAndroid.TextViewData"
+        tools:text="Clear"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/descr_visibility" />
+
+    <TextView
+        android:id="@+id/descr_sunrisey"
+        android:text="@string/sunrise"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/Theme.WeatherAppAndroid.TextViewDescr"
+        app:layout_constraintTop_toBottomOf="@id/text_visibilityy" />
+
+    <TextView
+        android:id="@+id/text_sunrise"
+        style="@style/Theme.WeatherAppAndroid.TextViewData"
+        tools:text="03/26/2021 2:01:23 PM UTC"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/descr_sunrisey" />
+
+    <TextView
+        android:id="@+id/descr_sunset"
+        android:text="@string/sunset"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/Theme.WeatherAppAndroid.TextViewDescr"
+        app:layout_constraintTop_toBottomOf="@id/text_sunrise" />
+
+    <TextView
+        android:id="@+id/text_sunset"
+        style="@style/Theme.WeatherAppAndroid.TextViewData"
+        tools:text="03/27/2021 2:01:23 AM UTC"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/descr_sunset" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
