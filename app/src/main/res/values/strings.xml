@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">WeatherApp.Android</string>
+    <string name="search_by_zip_code">Search by zip code</string>
+    <string name="searh_button">GET WEATHER</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="location">Location</string>
+    <string name="temperature">Temperature</string>
+    <string name="wind_speed">Wind speed</string>
+    <string name="humidity">Humidity</string>
+    <string name="visibility">Visibility</string>
+    <string name="sunrise">Time of Sunrise</string>
+    <string name="sunset">Time of Sunset</string>
+    <string name="error">Error</string>
 </resources>
